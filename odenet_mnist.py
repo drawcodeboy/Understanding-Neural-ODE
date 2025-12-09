@@ -119,7 +119,7 @@ class ODEBlock(nn.Module):
 
     def __init__(self, odefunc):
         super(ODEBlock, self).__init__()
-        self.odefunc = odefunc
+        self.odefunc = odefunc # 위에 Conv 2개 있는 Block 하나만 쓴다.
         self.integration_time = torch.tensor([0, 1]).float()
 
     def forward(self, x):
