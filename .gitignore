@@ -1,2 +1,5 @@
-experiment1/
-.data/
+# cache
+**/__pycache__/**
+
+# vscode
+.vscode/
