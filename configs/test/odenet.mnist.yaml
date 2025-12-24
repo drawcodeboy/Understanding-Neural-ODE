@@ -13,8 +13,8 @@ model:
   name: ODENet
 
 hyperparameters:
-  batch_size: 32
+  batch_size: 1000
 
 save:
   weights_path: saved/weights
-  weights_filename: odenet_mnist.epochs_020.pth
+  weights_filename: odenet_mnist.epochs_047.pth

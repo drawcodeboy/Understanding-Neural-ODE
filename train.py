@@ -76,6 +76,8 @@ def main(cfg):
         optimizer = optim.AdamW(model.parameters(), lr=hp_cfg['lr'])
     elif hp_cfg['optim'] == "Adam":
         optimizer = optim.Adam(model.parameters(), lr=hp_cfg['lr'])
+    elif hp_cfg['optim'] == "SGD":  
+        optimizer = optim.SGD(model.parameters(), lr=hp_cfg['lr'])
     
     # Load Scheduler
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer,

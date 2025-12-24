@@ -23,13 +23,15 @@ class MNIST_Dataset():
         return len(self.data_li)
     
     def __getitem__(self, idx):
-        image, _ = self.data_li[idx]
+        image, label = self.data_li[idx]
 
         image = np.array(image.getdata()).reshape(28, 28).astype(np.float32)
         image /= 255.
         image = torch.tensor(image, dtype=torch.float32).unsqueeze(0)
 
-        return image
+        label = torch.tensor(label, dtype=torch.int64) # long
+
+        return image, label
     
     @classmethod
     def from_config(cls, cfg):

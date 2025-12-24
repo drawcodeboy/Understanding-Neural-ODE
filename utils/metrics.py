@@ -16,6 +16,7 @@ def get_metrics(outputs, targets, class_num:int=10):
     recall = recall_score(targets, outputs, average='macro')
     
     results['Accuracy'] = accuracy
+    results['Test Error'] = 1 - accuracy
     results["F1-Score(Macro)"] = macro_f1
     results["Precision(Macro)"] = precision
     results["Recall(Macro)"] = recall

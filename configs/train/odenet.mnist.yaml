@@ -1,6 +1,6 @@
 expr: Train ODE-Net (MNIST)
 
-device: &device cuda:0
+device: &device cuda:1
 parallel: false
 
 data:
@@ -13,11 +13,11 @@ model:
   name: ODENet
 
 hyperparameters:
-  batch_size: 32
-  optim: AdamW
-  lr: 0.0001
+  batch_size: 128
+  optim: SGD
+  lr: 0.1
   loss_fn: cross-entropy
-  epochs: 200
+  epochs: 160
 
 save:
   name: odenet_mnist

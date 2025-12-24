@@ -13,11 +13,11 @@ model:
   name: ResNet
 
 hyperparameters:
-  batch_size: 32
-  optim: AdamW
-  lr: 0.0001
+  batch_size: 128
+  optim: SGD
+  lr: 0.1
   loss_fn: cross-entropy
-  epochs: 200
+  epochs: 160
 
 save:
   name: resnet_mnist
