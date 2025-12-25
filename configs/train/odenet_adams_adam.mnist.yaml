@@ -1,26 +1,27 @@
-expr: Train ResNet (MNIST)
+expr: Train ODE-Net (Adams with Adam) (MNIST)
 
-device: &device cuda:0
+device: &device cuda:1
 parallel: false
 
 data:
   dataset: MNIST
   root: data/
-  download: True
+  download: true
   mode: train
 
 model:
-  name: ResNet
-  layers: 6
+  name: OfficialODENet
+  adjoint: true
+  solver: implicit_adams
 
 hyperparameters:
   batch_size: 128
-  optim: SGD
+  optim: Adam
   lr: 0.1
   loss_fn: cross-entropy
   epochs: 160
 
 save:
-  name: resnet_mnist
+  name: odenet_adams_adam_mnist
   weights_path: saved/weights
   loss_path: saved/loss

@@ -1,4 +1,4 @@
-expr: Test ResNet (MNIST)
+expr: Test ResNet (One Block) (MNIST)
 
 device: &device cuda:0
 parallel: false
@@ -11,11 +11,11 @@ data:
 
 model:
   name: ResNet
-  layers: 6
+  layers: 1
 
 hyperparameters:
   batch_size: 1000
 
 save:
   weights_path: saved/weights
-  weights_filename: resnet_mnist.epochs_096.pth
+  weights_filename: one_resnet_mnist.epochs_159.pth

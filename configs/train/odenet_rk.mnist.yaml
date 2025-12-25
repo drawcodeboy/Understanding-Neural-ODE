@@ -1,17 +1,18 @@
-expr: Train ResNet (MNIST)
+expr: Train ODE-Net (RK) (MNIST)
 
-device: &device cuda:0
+device: &device cuda:1
 parallel: false
 
 data:
   dataset: MNIST
   root: data/
-  download: True
+  download: true
   mode: train
 
 model:
-  name: ResNet
-  layers: 6
+  name: OfficialODENet
+  adjoint: true
+  solver: dopri5
 
 hyperparameters:
   batch_size: 128
@@ -21,6 +22,6 @@ hyperparameters:
   epochs: 160
 
 save:
-  name: resnet_mnist
+  name: odenet_rk_mnist
   weights_path: saved/weights
   loss_path: saved/loss

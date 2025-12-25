@@ -1,4 +1,4 @@
-expr: Test ODE-Net (MNIST)
+expr: Test ODE-Net (Euler) (MNIST)
 
 device: &device cuda:0
 parallel: false
@@ -17,4 +17,4 @@ hyperparameters:
 
 save:
   weights_path: saved/weights
-  weights_filename: odenet_mnist.epochs_152.pth
+  weights_filename: odenet_euler_mnist.epochs_152.pth

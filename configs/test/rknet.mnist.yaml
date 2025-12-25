@@ -1,4 +1,4 @@
-expr: Test ResNet (MNIST)
+expr: Test RK-Net (MNIST)
 
 device: &device cuda:0
 parallel: false
@@ -10,12 +10,13 @@ data:
   mode: test
 
 model:
-  name: ResNet
-  layers: 6
+  name: OfficialODENet
+  adjoint: false
+  solver: dopri5
 
 hyperparameters:
   batch_size: 1000
 
 save:
   weights_path: saved/weights
-  weights_filename: resnet_mnist.epochs_096.pth
+  weights_filename: rknet_mnist.epochs_160.pth

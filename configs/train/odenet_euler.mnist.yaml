@@ -1,4 +1,4 @@
-expr: Train ODE-Net (MNIST)
+expr: Train ODE-Net (Euler) (MNIST)
 
 device: &device cuda:1
 parallel: false
@@ -20,6 +20,6 @@ hyperparameters:
   epochs: 160
 
 save:
-  name: odenet_mnist
+  name: odenet_euler_mnist
   weights_path: saved/weights
   loss_path: saved/loss

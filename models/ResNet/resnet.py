@@ -7,7 +7,7 @@ def norm(dim):
     return nn.BatchNorm2d(dim)
 
 class ResNet(nn.Module):
-    def __init__(self):
+    def __init__(self, layers):
         super().__init__()
         self.downsampling = nn.Sequential(
             nn.Conv2d(1, 64, 3, 1),
@@ -20,7 +20,7 @@ class ResNet(nn.Module):
         )
 
         self.feature = nn.Sequential(
-            *[ResBlock(64, 64) for _ in range(6)]
+            *[ResBlock(64, 64) for _ in range(layers)]
         )
 
         self.norm = norm(64)
@@ -39,4 +39,4 @@ class ResNet(nn.Module):
 
     @classmethod
     def from_config(cls, cfg):
-        return cls()
+        return cls(layers=cfg.get('layers', 6))

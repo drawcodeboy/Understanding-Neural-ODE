@@ -1,4 +1,4 @@
-expr: Test ResNet (MNIST)
+expr: Test ODE-Net (Adams with adam) (MNIST)
 
 device: &device cuda:0
 parallel: false
@@ -10,12 +10,13 @@ data:
   mode: test
 
 model:
-  name: ResNet
-  layers: 6
+  name: OfficialODENet
+  adjoint: true
+  solver: implicit_adams
 
 hyperparameters:
   batch_size: 1000
 
 save:
   weights_path: saved/weights
-  weights_filename: resnet_mnist.epochs_096.pth
+  weights_filename: odenet_adams_adam_mnist.epochs_083.pth

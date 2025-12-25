@@ -1,4 +1,4 @@
-expr: Train ResNet (MNIST)
+expr: Train ResNet (One Block) (MNIST)
 
 device: &device cuda:0
 parallel: false
@@ -11,7 +11,7 @@ data:
 
 model:
   name: ResNet
-  layers: 6
+  layers: 1
 
 hyperparameters:
   batch_size: 128
@@ -21,6 +21,6 @@ hyperparameters:
   epochs: 160
 
 save:
-  name: resnet_mnist
+  name: one_resnet_mnist
   weights_path: saved/weights
   loss_path: saved/loss
