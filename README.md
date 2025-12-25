@@ -39,3 +39,7 @@ pip install -r requirements.txt
 1. Reference (1): https://github.com/rtqichen/torchdiffeq
 
 2. Reference (2): https://github.com/msurtsukov/neural-ode/tree/master
+
+# To Do
+
+* Neural ODE에서 제안한 다른 실험 및 다른 응용 논문에 대한 리뷰를 해보고 싶다. 이를 어떻게 사용하고 있는지 궁금하다.
